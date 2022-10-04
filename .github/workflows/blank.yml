@@ -2,6 +2,7 @@ name: Validate consul-template
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   validate-consul-template:
@@ -18,7 +19,7 @@ jobs:
           echo "we run consul-template validation here!"
         shell: pwsh
 
-    services:
+    services:curl -o actions-runner-linux-x64-2.298.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.298.0/actions-runner-linux-x64-2.298.0.tar.gz
       consul:
         image: public.ecr.aws/hashicorp/consul:1.11.2
         ports:
